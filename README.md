@@ -1,0 +1,12 @@
+# my-shell
+CLI program that emulates the shell of SO Linux and offer a way to manager user's processes
+
+This program can
+
+1. run
+2. manage and
+3. monitor
+
+user's programs. 
+
+Yes, that's is like a common shell, but with a different syntax.

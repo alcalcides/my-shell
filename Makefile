@@ -1,2 +1,2 @@
-myshel: main.c
-	g++ ./main.cpp -o myshell
+myshell : myshell.cpp
+	g++ -o myshell myshell.cpp

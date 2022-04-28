@@ -10,3 +10,11 @@ This program can
 user's programs. 
 
 Yes, that's is like a common shell, but with a different syntax.
+
+## Compilation
+
+You can compile and run this program with the following command in Linux
+
+```bash
+$ g++ main.cpp -o myshell && ./myshell
+```

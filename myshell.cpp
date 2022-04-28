@@ -1,5 +1,6 @@
 #include <iostream>
-#include "./lib/treatArgs.cpp"
+#include "./lib/treatArgs.hpp"
+
 
 using namespace std;
 

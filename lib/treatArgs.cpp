@@ -1,3 +1,5 @@
+#include "./treatArgs.hpp"
+
 #include <iostream>
 
 using namespace std;

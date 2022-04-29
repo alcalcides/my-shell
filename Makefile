@@ -1,9 +1,15 @@
 myshell : myshell.cpp
-	# Compiles libs
-	g++ -c lib/treatArgs.cpp -o lib/treatArgs.o
+	# Preparing
+	mkdir -p ci/lib
+	mkdir ci/obj
 
-	# Builds static libs
-	ar rvs lib/treatArgs.a lib/treatArgs.o
+	# Compiling libs
+	g++ -c lib/treatArgs.cpp -o ci/obj/treatArgs.o
+	g++ -c lib/initMyshell.cpp -o ci/obj/initMyshell.o
 
-	# Compiles main program with all static libs
-	g++ -o myshell myshell.cpp lib/treatArgs.a
+	# Building static libs
+	ar rvs ci/lib/treatArgs.a ci/obj/treatArgs.o
+	ar rvs ci/lib/initMyshell.a ci/obj/initMyshell.o
+
+	# Compiling main program with all static libs
+	g++ -o myshell myshell.cpp ci/lib/treatArgs.a ci/lib/initMyshell.a

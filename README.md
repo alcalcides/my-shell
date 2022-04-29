@@ -18,3 +18,10 @@ You can compile and run this program with the following command in Linux
 ```bash
 $ make && ./myshell
 ```
+
+Whenever be needed, you can remove all compilation assets and rebuild from zero with
+
+
+```bash
+$ make -f MakeCleanUp
+```

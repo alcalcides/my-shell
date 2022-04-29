@@ -1,5 +1,6 @@
 #include <iostream>
 #include "./lib/treatArgs.hpp"
+#include "./lib/initMyshell.hpp"
 
 
 using namespace std;
@@ -7,7 +8,7 @@ using namespace std;
 int main(int argc, char** argv) {
     treatArgs(argc);
 
-    cout << "Hello World!" << endl;
+    initMyshell();
     
     return 0;
 }

@@ -6,7 +6,7 @@ using namespace std;
 
 void treatArgs(int argc) {
     if(argc > 1) {
-        cout << "[ERROR] Params are forbiden" << endl;
+        cout << "[ERROR] Params are forbidden" << endl;
         exit(EXIT_FAILURE);
     }
 }

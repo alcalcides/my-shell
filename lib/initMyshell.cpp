@@ -11,7 +11,7 @@
 void initMyshell()
 {
 	char input[MAX_STRING_LENGH];
-	char *word[MAX_NUMBER_OF_WORDS];
+	char* word[MAX_NUMBER_OF_WORDS];
 	int wordCounter = 0;
 
 	do
@@ -21,23 +21,12 @@ void initMyshell()
 		getMyshellOperation(word, input);
 	} while (word[wordCounter] == NULL);
 
-	// obtendo todos os demais argumentos
-	for (wordCounter++; wordCounter < MAX_NUMBER_OF_WORDS; wordCounter++)
-	{
-		word[wordCounter] = strtok(NULL, " \t\n");
-		if (word[wordCounter] == NULL)
-			break;
-	}
-
-	if (strtok(NULL, " \t\n"))
-	{
-		printf("[ERROR] Forbidden to enter, more than %d arguments\n", MAX_NUMBER_OF_WORDS);
-		exit(EXIT_FAILURE);
-	}
+	getAllArgs(word, &wordCounter, input, MAX_NUMBER_OF_WORDS);
 
 	// feedback to user
 	// ...
 
 	// execution
 	// ...
+	
 }

@@ -1,5 +1,5 @@
 #include "./initMyshell.hpp"
-#include "./readUserInput.hpp"
+#include "./dealWithInput.hpp"
 
 #include <string.h>
 #include <stdio.h>
@@ -17,12 +17,8 @@ void initMyshell()
 	do
 	{
 		printf("myshell> ");
-
 		readUserInput(input, MAX_STRING_LENGH);
-
-		// obtendo o comando inicial, a ser processado pelo shell
-		word[wordCounter] = strtok(input, " \t\n");
-
+		getMyshellOperation(word, input);
 	} while (word[wordCounter] == NULL);
 
 	// obtendo todos os demais argumentos
@@ -41,7 +37,7 @@ void initMyshell()
 
 	// feedback to user
 	// ...
-	
+
 	// execution
 	// ...
 }

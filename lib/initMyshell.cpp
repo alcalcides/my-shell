@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 #define MAX_STRING_LENGH 4096
-#define MAX_NUMBER_OF_WORDS 3
+#define MAX_NUMBER_OF_WORDS 100
 
 void initMyshell()
 {

@@ -1,40 +1,47 @@
 #include "./initMyshell.hpp"
 
-#include <iostream>
-#include <string>
-#include <sstream>
+#include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX_LENGH_STRING 10
+#define MAX_STRING_LENGH 4096
+#define MAX_NUMBER_OF_WORDS 3
 
-using namespace std;
+void initMyshell()
+{
+	char input[MAX_STRING_LENGH];
+	char *word[MAX_NUMBER_OF_WORDS];
+	int wordCounter = 0;
 
-void initMyshell() {
-	string inputFull, cmdMyshell, cmdSystem;
+	do
+	{
+		printf("myshell> ");
 
-	cout << "myshell> ";
+		// lendo a entrada do usuário
+		fgets(input, MAX_STRING_LENGH + 1, stdin);
 
-	// get user order
-	getline(cin, inputFull);
+		// obtendo o comando inicial, a ser processado pelo shell
+		word[wordCounter] = strtok(input, " \t\n");
 
-	// obtain Myshell command
-	stringstream ss(inputFull);
-	ss >> cmdMyshell;
+	} while (word[wordCounter] == NULL);
 
-	// verifications of Myshell comand
-	// ...
+	// obtendo todos os demais argumentos
+	for (wordCounter++; wordCounter < MAX_NUMBER_OF_WORDS; wordCounter++)
+	{
+		word[wordCounter] = strtok(NULL, " \t\n");
+		if (word[wordCounter] == NULL)
+			break;
+	}
 
-	// obtain command to be addressed to system Linux
-	cmdSystem = inputFull.substr(cmdMyshell.size() + 1, inputFull.size());
-
-	// verifications of system command
-	// ...
+	if (strtok(NULL, " \t\n"))
+	{
+		printf("[ERROR] Forbidden to enter, more than %d arguments\n", MAX_NUMBER_OF_WORDS);
+		exit(EXIT_FAILURE);
+	}
 
 	// feedback to user
-	cout << "myshell: user's command: " << inputFull << endl;
-
+	// ...
+	
 	// execution
 	// ...
-
 }

@@ -1,4 +1,5 @@
 #include "./initMyshell.hpp"
+#include "./readUserInput.hpp"
 
 #include <string.h>
 #include <stdio.h>
@@ -17,8 +18,7 @@ void initMyshell()
 	{
 		printf("myshell> ");
 
-		// lendo a entrada do usuário
-		fgets(input, MAX_STRING_LENGH + 1, stdin);
+		readUserInput(input, MAX_STRING_LENGH);
 
 		// obtendo o comando inicial, a ser processado pelo shell
 		word[wordCounter] = strtok(input, " \t\n");

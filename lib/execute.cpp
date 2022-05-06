@@ -27,7 +27,6 @@ void execute(char **word)
         char path[50] = "";
         if (strcmp("pingme", word[0]) == 0)
         {
-            strcpy(path, "");
             strcat(path, BIN_FEATURE);
             strcat(path, "pingme");
 

@@ -17,7 +17,7 @@ int main(int argc, char **argv)
     pidMyshell = fork();
     if (pidMyshell < 0)
     {
-        cout << "[ERROR] New process creation failure" << endl;
+        printf("[ERROR] New process creation failure\n");
         exit(EXIT_FAILURE);
     }
     else if (pidMyshell == 0)

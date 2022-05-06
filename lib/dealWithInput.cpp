@@ -15,6 +15,7 @@ void dealWithEOF()
 
 char *readUserInput(char *input, int maxLengh)
 {
+    printf("myshell> ");
     fgets(input, maxLengh, stdin);
     input[strlen(input) - 1] = '\0';
     dealWithEOF();

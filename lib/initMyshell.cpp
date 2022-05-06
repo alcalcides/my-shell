@@ -1,5 +1,6 @@
 #include "./initMyshell.hpp"
 #include "./dealWithInput.hpp"
+#include "./args.hpp"
 
 #include <string.h>
 #include <stdio.h>
@@ -11,7 +12,7 @@
 void initMyshell()
 {
 	char input[MAX_STRING_LENGH];
-	char* word[MAX_NUMBER_OF_WORDS];
+	char *word[MAX_NUMBER_OF_WORDS];
 	int wordCounter = 0;
 
 	do
@@ -25,8 +26,8 @@ void initMyshell()
 
 	// feedback to user
 	// ...
+	seeArgs(word, wordCounter);
 
 	// execution
 	// ...
-	
 }

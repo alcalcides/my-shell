@@ -1,9 +1,9 @@
-#include <iostream>     // cout
-#include <sys/types.h>  // fork, wait
-#include <sys/wait.h>   // wait
-#include <unistd.h>     // fork
-#include <stdlib.h>     // exit
-#include "./lib/treatArgs.hpp"
+#include <iostream>    // cout
+#include <sys/types.h> // fork, wait
+#include <sys/wait.h>  // wait
+#include <unistd.h>    // fork
+#include <stdlib.h>    // exit
+#include "./lib/args.hpp"
 #include "./lib/initMyshell.hpp"
 
 using namespace std;

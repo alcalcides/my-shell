@@ -3,7 +3,7 @@ myshell : myshell.cpp
 	mkdir -p ci/obj
 
 	# Compiling libs
-	g++ -c -o ci/obj/treatArgs.o lib/treatArgs.cpp
+	g++ -c -o ci/obj/args.o lib/args.cpp
 	g++ -c -o ci/obj/initMyshell.o lib/initMyshell.cpp
 	g++ -c -o ci/obj/dealWithInput.o lib/dealWithInput.cpp
 

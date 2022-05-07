@@ -5,6 +5,7 @@
 #include <stdlib.h>    // exit
 #include "./lib/args.hpp"
 #include "./lib/initMyshell.hpp"
+#include "./lib/print.hpp"
 
 using namespace std;
 
@@ -17,7 +18,7 @@ int main(int argc, char **argv)
     pidMyshell = fork();
     if (pidMyshell < 0)
     {
-        printf("[ERROR] New process creation failure\n");
+        printError("New process creation failure");
         exit(EXIT_FAILURE);
     }
     else if (pidMyshell == 0)

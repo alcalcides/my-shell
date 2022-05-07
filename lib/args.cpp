@@ -18,6 +18,6 @@ void seeArgs(char **word, int wordCounter)
 
     for (int i = 0; i < wordCounter; i++)
     {
-        printf("%s\n", word[i]);
+        cout << word[i] << endl;
     }
 }

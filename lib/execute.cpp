@@ -1,4 +1,5 @@
 #include "./execute.hpp"
+#include "./print.hpp"
 
 #include <string.h>
 #include <stdio.h>
@@ -15,7 +16,7 @@ void execute(char **word)
     pid_t pid = fork();
     if (pid < 0)
     {
-        printf("[ERROR] New process creation failure\n");
+        printError("New process creation failure");
         exit(EXIT_FAILURE);
     }
     else if (pid > 0)
@@ -38,7 +39,7 @@ void execute(char **word)
         }
         else
         {
-            printf("Unknown operation\n");
+            printError("Unknown operation");
         }
     }
 

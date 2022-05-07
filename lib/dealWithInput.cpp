@@ -1,4 +1,5 @@
 #include "./dealWithInput.hpp"
+#include "./print.hpp"
 
 #include <string.h>
 #include <stdio.h>
@@ -15,7 +16,7 @@ void dealWithEOF()
 
 char *readUserInput(char *input, int maxLengh)
 {
-    printf("myshell> ");
+    printMyshell();
     fgets(input, maxLengh, stdin);
     input[strlen(input) - 1] = '\0';
     dealWithEOF();
@@ -38,7 +39,7 @@ void getAllArgs(char **word, int *wordCounter, char *input, int const MAX_NUMBER
 
     if (strtok(NULL, " \t\n"))
     {
-        printf("[ERROR] Forbidden to enter, more than %d arguments\n", MAX_NUMBER_OF_WORDS);
+        printErrorOverArgs(MAX_NUMBER_OF_WORDS);
         exit(EXIT_FAILURE);
     }
 }

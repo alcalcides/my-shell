@@ -25,13 +25,17 @@ void execute(char **word)
     }
     else
     {
-        char path[50] = "";
         if (strcmp("pingme", word[0]) == 0)
         {
+            char path[50] = "";
             strcat(path, BIN_FEATURE);
             strcat(path, "pingme");
 
-            printf("%d\t%d\t%s\n", execvp(path, word), errno, strerror(errno));
+            execvp(path, word);
+        }
+        else if (strcmp("start", word[0]) == 0)
+        {
+            execvp(word[1], &word[1]);
         }
         else if (strcmp("quit", word[0]) == 0 || strcmp("exit", word[0]) == 0)
         {

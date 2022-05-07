@@ -21,6 +21,7 @@ void execute(char **word)
     }
     else if (pid > 0)
     {
+        printProcessStarted(pid);
         wait(0);
     }
     else

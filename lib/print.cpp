@@ -18,3 +18,7 @@ void printMyshell()
 {
     cout << "myshell> ";
 }
+
+void printProcessStarted(pid_t pid) {
+    cout << "myshell: process id " << pid << " started" << endl;
+}

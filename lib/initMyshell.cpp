@@ -12,11 +12,12 @@
 
 void initMyshell()
 {
+	int wordCounter;
 
 init:
+	wordCounter = 0;
 	char input[MAX_STRING_LENGH];
 	char *word[MAX_NUMBER_OF_WORDS];
-	int wordCounter = 0;
 
 	do
 	{

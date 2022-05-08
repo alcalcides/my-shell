@@ -18,7 +18,6 @@ char *readUserInput(char *input, int maxLengh)
 {
     printMyshell();
     fgets(input, maxLengh, stdin);
-    input[strlen(input) - 1] = '\0';
     dealWithEOF();
     return input;
 }

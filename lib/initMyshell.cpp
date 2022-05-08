@@ -4,26 +4,34 @@
 #include "./execute.hpp"
 
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 #define MAX_STRING_LENGH 4096
 #define MAX_NUMBER_OF_WORDS 100
 
 void initMyshell()
 {
+	int wordCounter;
 	char input[MAX_STRING_LENGH];
 	char *word[MAX_NUMBER_OF_WORDS];
-	int wordCounter = 0;
 
 	do
 	{
-		readUserInput(input, MAX_STRING_LENGH);
-		getMyshellOperation(word, input);
-	} while (word[wordCounter] == NULL);
+		do
+		{
+			wordCounter = 0;
+			readUserInput(input, MAX_STRING_LENGH);
+			getMyshellOperation(word, input);
+		} while (word[wordCounter] == NULL);
 
-	getAllArgs(word, &wordCounter, input, MAX_NUMBER_OF_WORDS);
+		getAllArgs(word, &wordCounter, input, MAX_NUMBER_OF_WORDS);
 
-	// debug
-	// seeArgs(word, wordCounter);
+		// debug
+		// seeArgs(word, wordCounter);
 
-	execute(word);
+		execute(word);
+	} while (shouldRepeat(word[0]));
+
+	exit(EXIT_SUCCESS);
 }

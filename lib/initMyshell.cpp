@@ -13,27 +13,25 @@
 void initMyshell()
 {
 	int wordCounter;
-
-init:
-	wordCounter = 0;
 	char input[MAX_STRING_LENGH];
 	char *word[MAX_NUMBER_OF_WORDS];
 
 	do
 	{
-		readUserInput(input, MAX_STRING_LENGH);
-		getMyshellOperation(word, input);
-	} while (word[wordCounter] == NULL);
+		do
+		{
+			wordCounter = 0;
+			readUserInput(input, MAX_STRING_LENGH);
+			getMyshellOperation(word, input);
+		} while (word[wordCounter] == NULL);
 
-	getAllArgs(word, &wordCounter, input, MAX_NUMBER_OF_WORDS);
+		getAllArgs(word, &wordCounter, input, MAX_NUMBER_OF_WORDS);
 
-	// debug
-	// seeArgs(word, wordCounter);
+		// debug
+		// seeArgs(word, wordCounter);
 
-	execute(word);
-	
-	if (strcmp("quit", word[0]) != 0 && strcmp("exit", word[0]) != 0)
-		goto init;
+		execute(word);
+	} while (strcmp("quit", word[0]) != 0 && strcmp("exit", word[0]) != 0);
 
 	exit(EXIT_SUCCESS);
 }

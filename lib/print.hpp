@@ -9,5 +9,6 @@ void printError(string msg);
 void printErrorOverArgs(int max);
 void printMyshell();
 void printProcessStarted(pid_t pid);
+void printSystemError();
 
 #endif

@@ -1,6 +1,8 @@
 #include "./print.hpp"
 #include <iostream>
 #include <string>
+#include <errno.h>
+#include <string.h>
 
 using namespace std;
 
@@ -21,4 +23,8 @@ void printMyshell()
 
 void printProcessStarted(pid_t pid) {
     cout << "myshell: process id " << pid << " started" << endl;
+}
+
+void printSystemError() {
+    cout << errno << ": " << strerror(errno) << endl;
 }

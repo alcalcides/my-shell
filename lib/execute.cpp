@@ -45,8 +45,8 @@ void execute(char **word)
         else
         {
             printError("Unknown operation");
+            exit(EXIT_SUCCESS);
         }
     }
 
-    exit(EXIT_SUCCESS);
 }

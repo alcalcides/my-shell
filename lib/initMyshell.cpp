@@ -31,7 +31,7 @@ void initMyshell()
 		// seeArgs(word, wordCounter);
 
 		execute(word);
-	} while (strcmp("quit", word[0]) != 0 && strcmp("exit", word[0]) != 0);
+	} while (shouldRepeat(word[0]));
 
 	exit(EXIT_SUCCESS);
 }

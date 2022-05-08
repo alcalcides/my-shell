@@ -48,5 +48,9 @@ void execute(char **word)
             exit(EXIT_SUCCESS);
         }
     }
+}
 
+bool shouldRepeat(char *cmd)
+{
+    return strcmp("quit", cmd) != 0 && strcmp("exit", cmd) != 0;
 }

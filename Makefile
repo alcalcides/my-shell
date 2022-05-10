@@ -9,6 +9,8 @@ myshell : myshell.cpp
 	g++ -c -o ci/obj/initMyshell.o lib/initMyshell.cpp
 	g++ -c -o ci/obj/dealWithInput.o lib/dealWithInput.cpp
 	g++ -c -o ci/obj/execute.o lib/execute.cpp
+	g++ -c -o ci/obj/childRoutine.o lib/childRoutine.cpp
+	g++ -c -o ci/obj/parentRoutine.o lib/parentRoutine.cpp
 
 	# Building static libs
 	ar rvs ci/myshell.a ci/obj/*.o

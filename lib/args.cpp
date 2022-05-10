@@ -1,14 +1,10 @@
 #include "./args.hpp"
 
-#include <iostream>
-
-using namespace std;
-
 void treatArgs(int argc)
 {
     if (argc > 1)
     {
-        cout << "[ERROR] Params are forbidden" << endl;
+        printError("Params are forbidden");
         exit(EXIT_FAILURE);
     }
 }

@@ -18,9 +18,7 @@ void playChild(char **word)
         execvp(word[1], &word[1]);
         
         // only if execvp fails
-        string errorCod = to_string(errno);
-        string errorMsg = strerror(errno);
-        printError("(" + errorCod + ") " + errorMsg);
+        printSystemError();
         exit(EXIT_FAILURE);
     }
     else if (strcmp("quit", word[0]) == 0 || strcmp("exit", word[0]) == 0)

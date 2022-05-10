@@ -2,12 +2,16 @@
 #define __PRINT__
 
 #include <string>
+#include <iostream>
+#include <errno.h>
+#include <string.h>
 
 using namespace std;
 
+void printMyshell();
 void printError(string msg);
 void printErrorOverArgs(int max);
-void printMyshell();
+void printMyshellMsg(string msg);
 void printProcessStarted(pid_t pid);
 void printSystemError();
 void printProcessExited(pid_t pid);

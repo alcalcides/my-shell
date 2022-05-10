@@ -10,5 +10,9 @@ void printErrorOverArgs(int max);
 void printMyshell();
 void printProcessStarted(pid_t pid);
 void printSystemError();
+void printProcessExited(pid_t pid);
+void printProcessKilled(pid_t pid);
+void printProcessStopped(pid_t pid);
+void printProcessContinued(pid_t pid);
 
 #endif

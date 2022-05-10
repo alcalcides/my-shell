@@ -25,6 +25,22 @@ void printProcessStarted(pid_t pid) {
     cout << "myshell: process id " << pid << " started" << endl;
 }
 
+void printProcessExited(pid_t pid) {
+    cout << "myshell: process id " << pid << " exited" << endl;
+}
+
+void printProcessKilled(pid_t pid) {
+    cout << "myshell: process id " << pid << " killed" << endl;
+}
+
+void printProcessStopped(pid_t pid) {
+    cout << "myshell: process id " << pid << " stopped" << endl;
+}
+
+void printProcessContinued(pid_t pid) {
+    cout << "myshell: process id " << pid << " continued" << endl;
+}
+
 void printSystemError() {
     cout << errno << ": " << strerror(errno) << endl;
 }

@@ -21,36 +21,46 @@ void execute(char **word)
     }
     else if (pid > 0)
     {
-        printProcessStarted(pid);
-        wait(0);
+        playParent(pid);
     }
     else
     {
-        if (strcmp("pingme", word[0]) == 0)
-        {
-            char path[50] = "";
-            strcat(path, BIN_FEATURE);
-            strcat(path, "pingme");
-
-            execvp(path, word);
-        }
-        else if (strcmp("start", word[0]) == 0)
-        {
-            execvp(word[1], &word[1]);
-        }
-        else if (strcmp("quit", word[0]) == 0 || strcmp("exit", word[0]) == 0)
-        {
-            exit(EXIT_SUCCESS);
-        }
-        else
-        {
-            printError("Unknown operation");
-            exit(EXIT_SUCCESS);
-        }
+        playChild(word);
     }
 }
 
 bool shouldRepeat(char *cmd)
 {
     return strcmp("quit", cmd) != 0 && strcmp("exit", cmd) != 0;
+}
+
+void playParent(pid_t child_pid)
+{
+    printProcessStarted(child_pid);
+    wait(0);
+}
+
+void playChild(char **word)
+{
+    if (strcmp("pingme", word[0]) == 0)
+    {
+        char path[50] = "";
+        strcat(path, BIN_FEATURE);
+        strcat(path, "pingme");
+
+        execvp(path, word);
+    }
+    else if (strcmp("start", word[0]) == 0)
+    {
+        execvp(word[1], &word[1]);
+    }
+    else if (strcmp("quit", word[0]) == 0 || strcmp("exit", word[0]) == 0)
+    {
+        exit(EXIT_SUCCESS);
+    }
+    else
+    {
+        printError("Unknown operation");
+        exit(EXIT_SUCCESS);
+    }
 }

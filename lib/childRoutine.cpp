@@ -1,6 +1,8 @@
 #include "./childRoutine.hpp"
 #include "./print.hpp"
 
+#include <errno.h>
+
 void playChild(char **word)
 {
     if (strcmp("pingme", word[0]) == 0)
@@ -14,6 +16,12 @@ void playChild(char **word)
     else if (strcmp("start", word[0]) == 0)
     {
         execvp(word[1], &word[1]);
+        
+        // only if execvp fails
+        string errorCod = to_string(errno);
+        string errorMsg = strerror(errno);
+        printError("(" + errorCod + ") " + errorMsg);
+        exit(EXIT_FAILURE);
     }
     else if (strcmp("quit", word[0]) == 0 || strcmp("exit", word[0]) == 0)
     {
